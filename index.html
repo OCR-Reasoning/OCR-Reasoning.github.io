@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>OCR-Reasoning</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://kit.fontawesome.com/f8ddf9854a.js" crossorigin="anonymous"></script>
+    <meta charset="utf-8">
+    <meta name="description"
+          content="OCR-Reasoning Benchmark: Unveiling the True Capabilities of MLLMs in Complex Text-Rich Image Reasoning">
+    <meta name="keywords" content="OCR, MLMM, MLMM Evaluation, Reasoning, LLM">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> OCR-Reasoning Benchmark: Unveiling the True Capabilities of MLLMs in Complex Text-Rich Image Reasoning</title>
+
+    <link rel="icon" href="./static/images/ocrreasoning_icon.png">
+
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+    
+    <link rel="stylesheet" href="./static/css/bulma.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="./static/css/index.css">
+    <link rel="stylesheet" href="./static/css/leaderboard.css">
+    <script src="https://kit.fontawesome.com/fff5b27ec1.js" crossorigin="anonymous"></script>
+    <!-- <script src="https://kit.fontawesome.com/eaf1856e6f.js" crossorigin="anonymous"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="./static/js/fontawesome.all.min.js"></script>
+    <script src="./static/js/bulma-carousel.min.js"></script>
+    <script src="./static/js/bulma-slider.min.js"></script>
+    <script src="./static/js/leaderboard_testmini.js"></script>
+    <script src="./static/js/index.js"></script>
+    <script type="text/javascript" src="static/js/sort-table.js" defer></script>
+  </head>
+  <body>
+
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+      <div class="navbar-menu">
+        <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+              More Research
+            </a>
+            <div class="navbar-dropdown">
+              <a class="navbar-item" href="https://huggingface.co/datasets/mx262/OCR-Reasoning">
+                <b>OCR-Reasoning</b> <span style="font-size:18px; display: inline; margin-left: 5px;">🔥</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
+            <div class="column has-text-centered">
+              <h1 class="title is-1 publication-title is-bold">
+                <img src="static/images/ocrreasoning_icon.png" style="width:1em;vertical-align: middle" alt="Logo"/>
+                <span class="OCR-Reasoning" style="vertical-align: middle">OCR-Reasoning</span>
+              </h1>
+              <h2 class="subtitle is-3 publication-subtitle">
+                Unveiling the True Capabilities of MLLMs in Complex Text-Rich Image Reasoning
+              </h2>
+              <div class="is-size-5 publication-authors">
+                <span class="author-block">Mingxin Huang<sup>1</sup>,</span>
+                <span class="author-block">Yongxin Shi<sup>1</sup>,</span>
+                <span class="author-block">Dezhi Peng *<sup>2</sup>,</span>
+                <span class="author-block">Songxuan Lai<sup>2</sup>,</span>
+                <span class="author-block">Zecheng Xie<sup>2</sup>,</span>
+                <span class="author-block">Lianwen Jin *<sup>1</sup>,</span>
+              </div>
+
+              <br>
+              <div class="is-size-5 publication-authors">
+                <span class="author-block"><sup>1</sup> South China University of Technology, <sup>2</sup> Huawei Cloud</span>
+              </div>
+              <div class="is-size-5 publication-authors">
+                <span class="author-block">*Corresponding Author</span><br>
+                <span class="author-block">Corresponding to: </span>
+                <span class="author-block"><a href="huangmingxin21@foxmail.com">huangmingxin21@foxmail.com</a>,</span>
+                <span class="author-block"><a href="mailto:pengdzscut@foxmail.com">pengdzscut@foxmail.com,</a></span>
+                <span class="author-block"><a href="mailto:eelwjin@scut.edu.cn">eelwjin@scut.edu.cn</a></span>
+              </div>
+
+              <div class="column has-text-centered">
+                <div class="publication-links">
+                  <span class="link-block">
+                    <a href="https://arxiv.org/abs/2505.17163" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>arXiv</span>
+                    </a>
+                  </span>
+                  <span class="link-block">
+                    <a href="https://huggingface.co/datasets/mx262/OCR-Reasoning" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon" style="font-size:18px">🤗</span>
+                      <span>OCR-Reasoning</span>
+                    </a>
+                  </span>
+                  <span class="link-block">
+                    <a href="https://github.com/SCUT-DLVCLab/OCR-Reasoning" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fab fa-github"></i>
+                      </span>
+                      <span>Code</span>
+                    </a>
+                  </span>
+                  <span class="link-block">
+                    <a href="#leaderboard_test" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon has-text-white">
+                        <i class="fa-solid fa-trophy"></i>
+                      </span>
+                      <span>Leaderboard</span>
+                    </a>
+                  </span>
+                  <span class="link-block">
+                    <a href="#examples" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon has-text-white">
+                        <i class="fa-solid fa-book"></i>
+                      </span>
+                      <span>Examples</span>
+                    </a>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container" style="margin-bottom: 2vh;">
+        <!-- Abstract. -->
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">🔔News</h2>
+            <div class="content has-text-justified">
+              <p>
+                <b>🔥[2025-05-24] The evaluation of OCR-Reasoning is now supported in  <a href="https://github.com/open-compass/VLMEvalKit">VLMEvalKit</a>.🚀</b>
+              </p>
+              <p>
+                <b>🔥[2025-05-18] Introducing <a href="https://arxiv.org/abs/2505.17163">OCR-Reasoning</a>. Release the <a href="https://huggingface.co/datasets/mx262/OCR-Reasoning">Data</a> and <a href="https://github.com/SCUT-DLVCLab/OCR-Reasoning">evaluation script</a>. 🚀</b>
+              </p>
+          </div>
+            <h2 class="title is-3">Introduction</h2>
+            <div class="content has-text-justified">
+              <p>
+                Recent advancements in multimodal slow-thinking systems have demonstrated remarkable performance across diverse visual reasoning tasks. However, their capabilities in text-rich image reasoning tasks remain understudied due to the lack of a systematic benchmark. To address this gap, we propose OCR-Reasoning, a comprehensive benchmark designed to systematically assess Multimodal Large Language Models on text-rich image reasoning tasks. The benchmark comprises 1,069 human-annotated examples spanning 6 core reasoning abilities and 18 practical reasoning tasks in text-rich visual scenarios. Furthermore, unlike other text-rich image understanding benchmarks that only annotate the final answers, OCR-Reasoning also annotates the reasoning process simultaneously. With the annotated reasoning process and the final answers, OCR-Reasoning evaluates not only the final answers generated by models but also their reasoning processes, enabling a holistic analysis of their problem-solving abilities. Leveraging this benchmark, we conducted a comprehensive evaluation of state-of-the-art MLLMs. Our results demonstrate the limitations of existing methodologies. Notably, even state-of-the-art MLLMs exhibit substantial difficulties, with none achieving accuracy surpassing 50% across OCR-Reasoning, indicating that the challenges of text-rich image reasoning are an urgent issue to be addressed.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!--/ Abstract. -->
+    </div>
+    </section>
+
+    <!-- DATASET SECTION -->
+    <section class="hero is-light is-small">
+      <div class="hero-body has-text-centered">
+        <h1 class="title is-1 OCR-Reasoning">
+          <img src="static/images/ocrreasoning_icon.png" alt="Logo" class="ocrreasoning-logo"/>
+          <span class="OCR-Reasoning">OCR-Reasoning Benchmark</span>
+        </h1>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Overview</h2>
+            <div class="content has-text-justified">
+              <p>
+                We introduce OCR-Reasoning, a novel benchmark specifically designed to evaluate the text-rich image reasoning skills of Multimodal Large Language Models (MLLMs). Specifically, OCR-Reasoning comprises a meticulously collected 1,069 human-annotated examples spanning 6 core reasoning abilities and 18 practical reasoning tasks commonly encountered in text-rich visual contexts. Furthermore, unlike other text-rich image understanding benchmarks that only annotate the final answers, OCR-Reasoning simultaneously annotates the reasoning process and the answers. This comprehensive annotation enables deeper insights into the problem-solving strategies employed by state-of-the-art models.
+              </p>
+              <img src="static/images/ocrreasoning_examples.jpg" alt="algebraic reasoning" class="center">
+              <br>
+              <p>
+                OCR-Reasoning is designed to measure six reasoning skills of MLLMs: Spatial Reasoning, Numerical Analysis, Logical Reasoning, Mathematical Reasoning, Multidisciplinary Knowledge, and Enumerative Reasoning.
+              </p>
+              <div class="content has-text-centered">
+                <img src="static/images/statistics.png" alt="algebraic reasoning" class="center" style="width:80%;">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Comparisons with Existing Benchmarks</h2>
+            <div class="content has-text-justified">
+              <p>
+                Through a simple comparison with existing datasets, we observe that in most cases the answers in existing datasets are directly present in the images, whereas our benchmark contains very few samples of this type. This implies that in our benchmark, to obtain the answer, the model needs to engage in reasoning rather than extracting it from the OCR results of the image.
+              </p>
+              <div class="content has-text-centered">
+                <img src="static/images/comparison.png" alt="algebraic reasoning" class="center" style="width:50%;">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESULTS SECTION -->
+    <section class="hero is-light is-small">
+      <div class="hero-body has-text-centered">
+        <h1 class="title is-1 ocrreasoning">Experiment Results</h1>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <!-------------------------------------------------------------------- RESULTS SECTION -------------------------------------------------------------------->
+        <div class="columns is-centered m-6">
+          <div class="column is-full has-text-centered content">
+            <h2 class="title is-3" id="leaderboard_test">Leaderboard on OCR-Reasoning (test)</h2>
+            <div class="content">
+              <p class="mt-3">Accuracy scores on the <b>test</b> subset (1069 examples) of <img src="static/images/ocrreasoning_icon.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
+                <span class="ocrreasoning">OCR-Reasoning</span>.
+              </p>
+
+              <table class="js-sort-table" id="results">
+                <tr>
+                    <td class="js-sort-number"><strong>#</strong></td>
+                    <td class="js-sort-number"><strong>Model</strong></td>
+                    <td class="js-sort-number"><strong>Method</strong></td>
+                    <td class="js-sort-number"><strong>Source</strong></td>
+                    <td class="js-sort-number"><strong>Date</strong></td>
+                    <td class="js-sort-number"><strong><u>ALL</u></strong></td>
+                    <td class="js-sort-number"><strong>SR</strong></td>
+                    <td class="js-sort-number"><strong>NAR</strong></td>
+                    <td class="js-sort-number"><strong>MR</strong></td>
+                    <td class="js-sort-number"><strong>ER</strong></td>
+                    <td class="js-sort-number"><strong>LR</strong></td>
+                    <td class="js-sort-number"><strong>MKR</strong></td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td><b>DouBao-1.5-Vision-Pro 🥇</b></td>
+                  <td>LMM 🖼️</td>
+                  <td><a href="https://arxiv.org/abs/2505.17163" class="ext-link" style="font-size: 16px;">Link</a></td>
+                  <td>2025-05-22</td>
+                  <td><b>46.8</b></td>
+                  <td><b>27.5</b></td>
+                  <td><b>54.0</b></td>
+                  <td>33.3</td>
+                  <td>50.8</td>
+                  <td>34.7</td>
+                  <td><b>58.4</b></td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td><b>OpenAI-o1 🥈</b></td>
+                  <td>LMM 🖼️</td>
+                  <td><a href="https://arxiv.org/abs/2505.17163" class="ext-link" style="font-size: 16px;">Link</a></td>
+                  <td>2025-05-22</td>
+                  <td>44.4</td>
+                  <td><b>27.5</b></td>
+                  <td>46.2</td>
+                  <td><b>43.1</b></td>
+                  <td>50.8</td>
+                  <td><b>40.3</b></td>
+                  <td>49.6</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td><b>Gemini-2.0-Flash 🥉</b></td>
+                  <td>LMM 🖼️</td>
+                  <td><a href="https://arxiv.org/abs/2505.17163" class="ext-link" style="font-size: 16px;">Link</a></td>
+                  <td>2025-05-22</td>
+                  <td>39.3</td>
+                  <td>19.3</td>
+                  <td>47.2</td>
+                  <td>24.5</td>
+                  <td>49.7</td>
+                  <td>36.8</td>
+                  <td>32.1</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td><b>Qwen2.5-VL-72B</b></td>
+                  <td>LMM 🖼️</td>
+                  <td><a href="https://arxiv.org/abs/2505.17163" class="ext-link" style="font-size: 16px;">Link</a></td>
+                  <td>2025-05-22</td>
+                  <td>37.5</td>
+                  <td>24.8</td>
+                  <td>44.7</td>
+                  <td>22.5</td>
+                  <td>47.5</td>
+                  <td>28.5</td>
+                  <td>34.3</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td><b>Qwen2.5-VL-32B</b></td>
+                  <td>LMM 🖼️</td>
+                  <td><a href="https://arxiv.org/abs/2505.17163" class="ext-link" style="font-size: 16px;">Link</a></td>
+                  <td>2025-05-22</td>
+                  <td>36.2</td>
+                  <td>21.1</td>
+                  <td>38.7</td>
+                  <td>25.5</td>
+                  <td>46.9</td>
+                  <td>34.7</td>
+                  <td>36.5</td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td><b>Claude-3.7-Sonnet</b></td>
+                  <td>LMM 🖼️</td>
+                  <td><a href="https://arxiv.org/abs/2505.17163" class="ext-link" style="font-size: 16px;">Link</a></td>
+                  <td>2025-05-22</td>
+                  <td>35.8</td>
+                  <td>20.2</td>
+                  <td>35.4</td>
+                  <td>23.5</td>
+                  <td><b>60.3</b></td>
+                  <td>30.6</td>
+                  <td>32.1</td>
+                </tr>
+                <tr>
+                  <td>7</td>
+                  <td><b>OpenAI-o3-mini</b></td>
+                  <td>Tool 🛠️</td>
+                  <td><a href="https://arxiv.org/abs/2505.17163" class="ext-link" style="font-size: 16px;">Link</a></td>
+                  <td>2025-05-22</td>
+                  <td>33.3</td>
+                  <td>17.4</td>
+                  <td>41.2</td>
+                  <td>25.5</td>
+                  <td>41.3</td>
+                  <td>24.3</td>
+                  <td>27.7</td>
+                </tr>
+                <tr>
+                  <td>8</td>
+                  <td><b>GPT-4o</b></td>
+                  <td>LMM 🖼️</td>
+                  <td><a href="https://arxiv.org/abs/2505.17163" class="ext-link" style="font-size: 16px;">Link</a></td>
+                  <td>2025-05-22</td>
+                  <td>30.7</td>
+                  <td>21.1</td>
+                  <td>35.9</td>
+                  <td>18.6</td>
+                  <td>40.8</td>
+                  <td>26.4</td>
+                  <td>23.4</td>
+                </tr>
+                <tr>
+                  <td>9</td>
+                  <td><b>Llama4-Scout-109B-A17B</b></td>
+                  <td>MoE 🤖</td>
+                  <td><a href="https://arxiv.org/abs/2505.17163" class="ext-link" style="font-size: 16px;">Link</a></td>
+                  <td>2025-05-22</td>
+                  <td>27.7</td>
+                  <td>15.6</td>
+                  <td>34.7</td>
+                  <td>16.7</td>
+                  <td>41.3</td>
+                  <td>22.9</td>
+                  <td>12.4</td>
+                </tr>
+                <tr>
+                  <td>10</td>
+                  <td><b>DeepSeek-R1-Distill-Qwen-32B</b></td>
+                  <td>Tool 🛠️</td>
+                  <td><a href="https://arxiv.org/abs/2505.17163" class="ext-link" style="font-size: 16px;">Link</a></td>
+                  <td>2025-05-22</td>
+                  <td>26.5</td>
+                  <td>11.9</td>
+                  <td>28.9</td>
+                  <td>23.5</td>
+                  <td>34.6</td>
+                  <td>18.8</td>
+                  <td>30.7</td>
+                </tr>
+                <tr>
+                  <td>11</td>
+                  <td><b>Kimi-VL-A3B-Thinking</b></td>
+                  <td>MoE 🤖</td>
+                  <td><a href="https://arxiv.org/abs/2505.17163" class="ext-link" style="font-size: 16px;">Link</a></td>
+                  <td>2025-05-22</td>
+                  <td>20.5</td>
+                  <td>11.9</td>
+                  <td>22.4</td>
+                  <td>14.7</td>
+                  <td>24.6</td>
+                  <td>21.5</td>
+                  <td>19.7</td>
+                </tr>
+                <tr>
+                  <td>12</td>
+                  <td><b>InternVL3-78B</b></td>
+                  <td>LMM 🖼️</td>
+                  <td><a href="https://arxiv.org/abs/2505.17163" class="ext-link" style="font-size: 16px;">Link</a></td>
+                  <td>2025-05-22</td>
+                  <td>19.9</td>
+                  <td>13.8</td>
+                  <td>22.4</td>
+                  <td>9.8</td>
+                  <td>14.0</td>
+                  <td>27.1</td>
+                  <td>25.5</td>
+                </tr>
+                <tr>
+                  <td>13</td>
+                  <td><b>InternVL3-32B</b></td>
+                  <td>LMM 🖼️</td>
+                  <td><a href="https://arxiv.org/abs/2505.17163" class="ext-link" style="font-size: 16px;">Link</a></td>
+                  <td>2025-05-22</td>
+                  <td>17.1</td>
+                  <td>14.7</td>
+                  <td>10.3</td>
+                  <td>14.7</td>
+                  <td>24.0</td>
+                  <td>11.8</td>
+                  <td>37.2</td>
+                </tr>
+                <tr>
+                  <td>14</td>
+                  <td><b>Qwen2.5-VL-7B</b></td>
+                  <td>LMM 🖼️</td>
+                  <td><a href="https://arxiv.org/abs/2505.17163" class="ext-link" style="font-size: 16px;">Link</a></td>
+                  <td>2025-05-22</td>
+                  <td>15.7</td>
+                  <td>13.8</td>
+                  <td>11.6</td>
+                  <td>8.8</td>
+                  <td>20.1</td>
+                  <td>9.0</td>
+                  <td>35.8</td>
+                </tr>
+                <tr>
+                  <td>15</td>
+                  <td><b>VL-Rethinker-7B</b></td>
+                  <td>LMM 🖼️</td>
+                  <td><a href="https://arxiv.org/abs/2505.17163" class="ext-link" style="font-size: 16px;">Link</a></td>
+                  <td>2025-05-22</td>
+                  <td>14.6</td>
+                  <td>8.3</td>
+                  <td>16.1</td>
+                  <td>9.8</td>
+                  <td>19.6</td>
+                  <td>8.3</td>
+                  <td>19.0</td>
+                </tr>
+                <tr>
+                  <td>16</td>
+                  <td><b>VLAA-Thinker-Qwen2.5VL-7B</b></td>
+                  <td>LMM 🖼️</td>
+                  <td><a href="https://arxiv.org/abs/2505.17163" class="ext-link" style="font-size: 16px;">Link</a></td>
+                  <td>2025-05-22</td>
+                  <td>14.4</td>
+                  <td>11.9</td>
+                  <td>10.3</td>
+                  <td>7.8</td>
+                  <td>21.2</td>
+                  <td>11.8</td>
+                  <td>27.0</td>
+                </tr>
+                <tr>
+                  <td>17</td>
+                  <td><b>MM-Eureka-Qwen-7B</b></td>
+                  <td>LMM 🖼️</td>
+                  <td><a href="https://arxiv.org/abs/2505.17163" class="ext-link" style="font-size: 16px;">Link</a></td>
+                  <td>2025-05-22</td>
+                  <td>13.2</td>
+                  <td>9.2</td>
+                  <td>7.0</td>
+                  <td>10.8</td>
+                  <td>18.4</td>
+                  <td>15.3</td>
+                  <td>27.0</td>
+                </tr>  
+                <tr>
+                  <td>18</td>
+                  <td><b>Qwen2.5-VL-3B</b></td>
+                  <td>LMM 🖼️</td>
+                  <td><a href="https://arxiv.org/abs/2505.17163" class="ext-link" style="font-size: 16px;">Link</a></td>
+                  <td>2025-05-22</td>
+                  <td>12.2</td>
+                  <td>11.0</td>
+                  <td>11.8</td>
+                  <td>9.8</td>
+                  <td>19.0</td>
+                  <td>7.6</td>
+                  <td>11.7</td>
+                </tr>
+                <tr>
+                  <td>19</td>
+                  <td><b>InternVL3-8B</b></td>
+                  <td>LMM 🖼️</td>
+                  <td><a href="https://arxiv.org/abs/2505.17163" class="ext-link" style="font-size: 16px;">Link</a></td>
+                  <td>2025-05-22</td>
+                  <td>11.5</td>
+                  <td>12.8</td>
+                  <td>5.8</td>
+                  <td>11.8</td>
+                  <td>17.9</td>
+                  <td>7.6</td>
+                  <td>22.6</td>
+                </tr>
+                <tr>
+                  <td>20</td>
+                  <td><b>InternVL3-2B</b></td>
+                  <td>LMM 🖼️</td>
+                  <td><a href="https://arxiv.org/abs/2505.17163" class="ext-link" style="font-size: 16px;">Link</a></td>
+                  <td>2025-05-22</td>
+                  <td>10.8</td>
+                  <td>11.9</td>
+                  <td>4.8</td>
+                  <td>7.8</td>
+                  <td>18.4</td>
+                  <td>11.8</td>
+                  <td>18.3</td>
+                </tr>      
+            </table>
+              <b>Method types:</b> <b>MoE 🤖:</b> Mixture of Experts, <b>MLMM 🖼️:</b> Multimodal Large Language Model, <b>Tool 🛠️:</b> Large Language Model with OCR. <b>ALL</b>: Overall Average Score.
+              <br>
+              <b>Task types:</b> <b>SR:</b> Spatial Reasoning,
+              <b>NAR:</b> Numerical Analysis Reasoning,
+              <b>MR:</b> Mathematical Reasoning,
+              <b>ER:</b> Enumerative Reasoning,
+              <b>LR:</b> Logical Reasoning,
+              <b>MKR:</b> Multidisciplinary Knowledge Reasoning
+            </div>
+          </div>
+        </div>
+        
+
+        <div class="columns is-centered m-6">
+          <div class="column is-full has-text-centered content">
+            <h2 class="title is-3" id="leaderboard_test">Leaderboard for Reasoning Path Scores</h2>
+            <div class="content">
+              <p class="mt-3">Scores on the reasoning path of <img src="static/images/ocrreasoning_icon.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
+                <span class="ocrreasoning">OCR-Reasoning</span>.
+              </p>
+
+              <table class="js-sort-table" id="results">
+                <tr>
+                    <td class="js-sort-number"><strong>#</strong></td>
+                    <td class="js-sort-number"><strong>Model</strong></td>
+                    <td class="js-sort-number"><strong>Method</strong></td>
+                    <td class="js-sort-number"><strong>Source</strong></td>
+                    <td class="js-sort-number"><strong>Date</strong></td>
+                    <td class="js-sort-number"><strong><u>ALL</u></strong></td>
+                    <td class="js-sort-number"><strong>SR</strong></td>
+                    <td class="js-sort-number"><strong>NAR</strong></td>
+                    <td class="js-sort-number"><strong>MR</strong></td>
+                    <td class="js-sort-number"><strong>ER</strong></td>
+                    <td class="js-sort-number"><strong>LR</strong></td>
+                    <td class="js-sort-number"><strong>MKR</strong></td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td><b>DouBao-1.5-Vision-Pro 🥇</b></td>
+                  <td>LMM 🖼️</td>
+                  <td><a href="https://arxiv.org/abs/2505.17163" class="ext-link" style="font-size: 16px;">Link</a></td>
+                  <td>2025-05-22</td>
+                  <td>55.4</td>
+                  <td>38.2</td>
+                  <td>61.8</td>
+                  <td>50.2</td>
+                  <td>52.4</td>
+                  <td>52.8</td>
+                  <td>61.2</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td><b>Claude-3.7-Sonnet 🥈</b></td>
+                  <td>LMM 🖼️</td>
+                  <td><a href="https://arxiv.org/abs/2505.17163" class="ext-link" style="font-size: 16px;">Link</a></td>
+                  <td>2025-05-22</td>
+                  <td>50.3</td>
+                  <td>37.7</td>
+                  <td>55.0</td>
+                  <td>38.8</td>
+                  <td>58.1</td>
+                  <td>48.6</td>
+                  <td>46.5</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td><b>Gemini-2.0-Flash 🥉</b></td>
+                  <td>LMM 🖼️</td>
+                  <td><a href="https://arxiv.org/abs/2505.17163" class="ext-link" style="font-size: 16px;">Link</a></td>
+                  <td>2025-05-22</td>
+                  <td>49.5</td>
+                  <td>31.5</td>
+                  <td>57.1</td>
+                  <td>42.6</td>
+                  <td>49.3</td>
+                  <td>47.4</td>
+                  <td>49.2</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td><b>OpenAI-o1 🥈</b></td>
+                  <td>LMM 🖼️</td>
+                  <td><a href="https://arxiv.org/abs/2505.17163" class="ext-link" style="font-size: 16px;">Link</a></td>
+                  <td>2025-05-22</td>
+                  <td>48.5</td>
+                  <td>36.9</td>
+                  <td>53.9</td>
+                  <td>50.0</td>
+                  <td>39.4</td>
+                  <td>49.4</td>
+                  <td>51.8</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td><b>GPT-4o</b></td>
+                  <td>LMM 🖼️</td>
+                  <td><a href="https://arxiv.org/abs/2505.17163" class="ext-link" style="font-size: 16px;">Link</a></td>
+                  <td>2025-05-22</td>
+                  <td>45.4</td>
+                  <td>35.4</td>
+                  <td>48.9</td>
+                  <td>33.0</td>
+                  <td>48.7</td>
+                  <td>48.0</td>
+                  <td>45.5</td>
+                </tr>      
+            </table>
+              <b>Method types:</b> <b>MoE 🤖:</b> Mixture of Experts, <b>MLMM 🖼️:</b> Multimodal Large Language Model, <b>Tool 🛠️:</b> Large Language Model with OCR. <b>ALL</b>: Overall Average Score.
+              <br>
+              <b>Task types:</b> <b>SR:</b> Spatial Reasoning,
+              <b>NAR:</b> Numerical Analysis Reasoning,
+              <b>MR:</b> Mathematical Reasoning,
+              <b>ER:</b> Enumerative Reasoning,
+              <b>LR:</b> Logical Reasoning,
+              <b>MKR:</b> Multidisciplinary Knowledge Reasoning
+              <br>
+              <div>
+              <p>🚨 To submit your results to the leaderboard, please send to <a href="mailto:huangmingxin21@foxmail.com.com">this email</a> with your result json files.</p>
+              </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="columns is-centered m-6">
+          <div class="column is-full has-text-centered content">
+            <h2 class="title is-3">📌 Key Finding</h2>
+            <div class="content has-text-justified">
+              <p>
+                <b>1. The visual information in images is crucial for the OCR Reasoning task.</b> when we replace images with OCR results and feed them into LLMs, we observe that their accuracy is relatively low. This indicates that text alone is insufficient for solving text-rich image reasoning tasks.
+              </p>
+              <br>
+              <p>
+              <b>2. Existing models still have room for improvement in OCR reasoning tasks.</b> Even state-of-the-art MLLMs exhibit substantial difficulties, with none achieving accuracy surpassing 50% across OCR-Reasoning.
+              </p>
+              <br>
+              <p>
+              <b>3. Existing reinforcement learning methods perform poorly on text-rich image reasoning tasks.</b> Designing reinforcement learning for text-rich image reasoning is a potential direction for enhancing text-rich image reasoning capabilities.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-------------------------------------------------------------------- Image Type SECTION -------------------------------------------------------------------->
+        <div class="columns is-centered m-6">
+          <div class="column is-full has-text-centered content">
+            <h2 class="title is-3" id="examples">Examples of Different Tasks</h2>
+            <div class="content has-text-justified">
+              <p>
+                OCR-Reasoning not only annotates the final answers but also documents the reasoning steps taken to arrive at the answers. Specifically, OCR-Reasoning comprises 1,069 meticulously collected human-annotated examples spanning 6 core reasoning abilities and 18 practical reasoning tasks commonly encountered in text-rich visual contexts. We provide some representative examples of these 18 practical reasoning tasks in text-rich visual scenarios.
+              </p>
+              <div class="content has-text-centered">
+                <img src="static/images/type.png" alt="algebraic reasoning" class="center" style="width:90%;">
+              </div>
+            </div>
+            <div class="carousel results-carousel">
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img src="static/images/expamples/0.png" alt="grade-lv" width="60%"/>
+                </div>
+              </div>
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img src="static/images/expamples/1.png" alt="grade-lv" width="60%"/>
+                </div>
+              </div>
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img src="static/images/expamples/2.png" alt="grade-lv" width="60%"/>
+                </div>
+              </div>
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img src="static/images/expamples/3.png" alt="grade-lv" width="60%"/>
+                </div>
+              </div>
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img src="static/images/expamples/4.png" alt="grade-lv" width="60%"/>
+                </div>
+              </div>
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img src="static/images/expamples/5.png" alt="grade-lv" width="60%"/>
+                </div>
+              </div>
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img src="static/images/expamples/6.png" alt="grade-lv" width="60%"/>
+                </div>
+              </div>
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img src="static/images/expamples/7.png" alt="grade-lv" width="60%"/>
+                </div>
+              </div>
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img src="static/images/expamples/8.png" alt="grade-lv" width="60%"/>
+                </div>
+              </div>
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img src="static/images/expamples/9.png" alt="grade-lv" width="60%"/>
+                </div>
+              </div>
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img src="static/images/expamples/10.png" alt="grade-lv" width="60%"/>
+                </div>
+              </div>
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img src="static/images/expamples/11.png" alt="grade-lv" width="60%"/>
+                </div>
+              </div>
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img src="static/images/expamples/12.png" alt="grade-lv" width="60%"/>
+                </div>
+              </div>
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img src="static/images/expamples/13.png" alt="grade-lv" width="60%"/>
+                </div>
+              </div>
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img src="static/images/expamples/14.png" alt="grade-lv" width="60%"/>
+                </div>
+              </div>
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img src="static/images/expamples/15.png" alt="grade-lv" width="60%"/>
+                </div>
+              </div>
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img src="static/images/expamples/16.png" alt="grade-lv" width="60%"/>
+                </div>
+              </div>
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img src="static/images/expamples/17.png" alt="grade-lv" width="60%"/>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <!-------------------------------------------------------------------- Error Example  -------------------------------------------------------------------->
+        <div class="columns is-centered m-6">
+          <div class="column is-full has-text-centered content">
+            <h2 class="title is-3" id="examples">Error Examples</h2>
+            <div class="carousel results-carousel">
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img src="static/images/error/1.png" alt="grade-lv" width="60%"/>
+                </div>
+              </div>
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img src="static/images/error/2.png" alt="grade-lv" width="60%"/>
+                </div>
+              </div>
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img src="static/images/error/3.png" alt="grade-lv" width="60%"/>
+                </div>
+              </div>
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img src="static/images/error/4.png" alt="grade-lv" width="60%"/>
+                </div>
+              </div>
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img src="static/images/error/5.png" alt="grade-lv" width="60%"/>
+                </div>
+              </div>
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img src="static/images/error/6.png" alt="grade-lv" width="60%"/>
+                </div>
+              </div>
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img src="static/images/error/7.png" alt="grade-lv" width="60%"/>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- @PAN TODO: bibtex -->
+    <section class="section" id="BibTeX">
+      <div class="container is-max-desktop content">
+        <h2 class="title is-3 has-text-centered">BibTeX</h2>
+        <pre><code>
+          @article{huang2025ocreasoning,
+            title={OCR-Reasoning Benchmark: Unveiling the True Capabilities of MLLMs in Complex Text-Rich Image Reasoning}, 
+            author={Mingxin Huang and Yongxin Shi and Dezhi Peng and Songxuan Lai and Zecheng Xie and Lianwen Jin},
+            journal={arXiv preprint arXiv:2505.17163},
+            year={2025},
+          }
+    </code></pre>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This website is website adapted from <a href="https://nerfies.github.io/">Nerfies</a>, <a href="https://mathvista.github.io/">MathVista</a> and <a href="https://mmmu-benchmark.github.io/">MMMU</a>, licensed under a <a rel="license"
+                                                  href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+              Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+</html>
