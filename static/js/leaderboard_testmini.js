@@ -9,13 +9,20 @@ function generateTable() {
           <td class="js-sort"><strong>Source</strong></td>
           <td class="js-sort"><strong>Date</strong></td>
           <td class="js-sort-number"><strong><u>ALL</u></strong></td>
-          <td class="js-sort-number"><strong>SR</strong></td>
-          <td class="js-sort-number"><strong>NAR</strong></td>
-          <td class="js-sort-number"><strong>MR</strong></td>
-          <td class="js-sort-number"><strong>ER</strong></td>
-          <td class="js-sort-number"><strong>LR</strong></td>
-          <td class="js-sort-number"><strong>MKR</strong></td>
+          <td class="js-sort-number"><strong>FQA</strong></td>
+          <td class="js-sort-number"><strong>GPS</strong></td>
+          <td class="js-sort-number"><strong>MWP</strong></td>
+          <td class="js-sort-number"><strong>TQA</strong></td>
+          <td class="js-sort-number"><strong>VQA</strong></td>
+          <td class="js-sort-number"><strong>ALG</strong></td>
+          <td class="js-sort-number"><strong>ARI</strong></td>
+          <td class="js-sort-number"><strong>GEO</strong></td>
+          <td class="js-sort-number"><strong>LOG</strong></td>
+          <td class="js-sort-number"><strong>NUM</strong></td>
+          <td class="js-sort-number"><strong>SCI</strong></td>
+          <td class="js-sort-number"><strong>STA</strong></td>
       </tr>`;
+
       // sort data to make sure the best model is on top
       first_row = '-' // "Human Performance*"
       console.log(data);
@@ -61,21 +68,33 @@ function generateTable() {
         }          
 
         // if entry.FQA is a number
-        if (!isNaN(entry.SR)) {
-          table += `<td>${entry.SR.toFixed(1).toString()}</td>`;
-          table += `<td>${entry.NAR.toFixed(1).toString()}</td>`;
-          table += `<td>${entry.MR.toFixed(1).toString()}</td>`;
-          table += `<td>${entry.ER.toFixed(1).toString()}</td>`;
-          table += `<td>${entry.LR.toFixed(1).toString()}</td>`;
-          table += `<td>${entry.MKR.toFixed(1).toString()}</td>`;
+        if (!isNaN(entry.FQA)) {
+          table += `<td>${entry.FQA.toFixed(1).toString()}</td>`;
+          table += `<td>${entry.GPS.toFixed(1).toString()}</td>`;
+          table += `<td>${entry.MWP.toFixed(1).toString()}</td>`;
+          table += `<td>${entry.TQA.toFixed(1).toString()}</td>`;
+          table += `<td>${entry.VQA.toFixed(1).toString()}</td>`;
+          table += `<td>${entry.ALG.toFixed(1).toString()}</td>`;
+          table += `<td>${entry.ARI.toFixed(1).toString()}</td>`;
+          table += `<td>${entry.GEO.toFixed(1).toString()}</td>`;
+          table += `<td>${entry.LOG.toFixed(1).toString()}</td>`;
+          table += `<td>${entry.NUM.toFixed(1).toString()}</td>`;
+          table += `<td>${entry.SCI.toFixed(1).toString()}</td>`;
+          table += `<td>${entry.STA.toFixed(1).toString()}</td>`;
         }
         else {
-        table += `<td>${entry.SR.toString()}</td>`;
-        table += `<td>${entry.NAR.toString()}</td>`;
-        table += `<td>${entry.MR.toString()}</td>`;
-        table += `<td>${entry.ER.toString()}</td>`;
-        table += `<td>${entry.LR.toString()}</td>`;
-        table += `<td>${entry.MKR.toString()}</td>`;
+        table += `<td>${entry.FQA.toString()}</td>`;
+        table += `<td>${entry.GPS.toString()}</td>`;
+        table += `<td>${entry.MWP.toString()}</td>`;
+        table += `<td>${entry.TQA.toString()}</td>`;
+        table += `<td>${entry.VQA.toString()}</td>`;
+        table += `<td>${entry.ALG.toString()}</td>`;
+        table += `<td>${entry.ARI.toString()}</td>`;
+        table += `<td>${entry.GEO.toString()}</td>`;
+        table += `<td>${entry.LOG.toString()}</td>`;
+        table += `<td>${entry.NUM.toString()}</td>`;
+        table += `<td>${entry.SCI.toString()}</td>`;
+        table += `<td>${entry.STA.toString()}</td>`;
         }
         table += '</tr>';
     }
